@@ -55,14 +55,33 @@
   --aurora-2: rgba(20, 39, 66, 0.08);
   --vignette: radial-gradient(ellipse 80% 75% at 50% 45%, transparent 35%, rgba(230, 219, 198, 0.55) 100%);
 
-  --btn-primary-bg: #142742;
-  --btn-primary-bg-hover: #1f3c64;
-  --btn-primary-ink: #fdfbf6;
+  --btn-primary-bg: linear-gradient(135deg var(--in-oklab), #1e3a63 0%, #12243e 58%, #1a3357 100%);
+  --btn-primary-bg-hover: linear-gradient(135deg var(--in-oklab), #264775 0%, #172e4f 58%, #213e69 100%);
+  --btn-primary-ink: #fbf5e6;
+  --btn-primary-border: rgba(201, 162, 85, 0.72);
+  --btn-primary-icon: #e5c37e;
+  --btn-primary-shadow:
+    inset 0 1px 0 rgba(246, 226, 174, 0.25),
+    inset 0 0 0 2.5px rgba(18, 36, 62, 0.55),
+    0 8px 20px -8px rgba(16, 32, 56, 0.45);
+  --btn-primary-shadow-hover:
+    inset 0 1px 0 rgba(246, 226, 174, 0.42),
+    inset 0 0 0 2.5px rgba(18, 36, 62, 0.45),
+    0 12px 26px -8px rgba(16, 32, 56, 0.54);
 
-  --btn-secondary-bg: rgba(253, 251, 246, 0.92);
-  --btn-secondary-bg-hover: #efe6d5;
+  --btn-secondary-bg: rgba(253, 251, 246, 0.86);
+  --btn-secondary-bg-hover: #f3ead7;
   --btn-secondary-ink: #142742;
-  --btn-secondary-border: #b59e76;
+  --btn-secondary-border: #c5a66c;
+  --btn-secondary-icon: #8d6623;
+  --btn-secondary-shadow:
+    inset 0 0 0 2.5px rgba(253, 251, 246, 0.92),
+    inset 0 0 0 3.25px rgba(197, 166, 108, 0.28),
+    0 4px 12px -6px rgba(105, 81, 41, 0.2);
+  --btn-secondary-shadow-hover:
+    inset 0 0 0 2.5px rgba(243, 234, 215, 0.92),
+    inset 0 0 0 3.25px rgba(197, 166, 108, 0.52),
+    0 8px 18px -8px rgba(105, 81, 41, 0.28);
 
   --focus-ring: #7a561a;
   --shadow-card:
@@ -131,14 +150,31 @@
     --aurora-2: rgba(56, 114, 196, 0.2);
     --vignette: radial-gradient(ellipse 80% 75% at 50% 45%, transparent 30%, rgba(4, 10, 20, 0.68) 100%);
 
-    --btn-primary-bg: #e2be76;
-    --btn-primary-bg-hover: #efd196;
-    --btn-primary-ink: #0d192b;
+    --btn-primary-bg: linear-gradient(135deg var(--in-oklab), #edd398 0%, #cfa454 55%, #e5c378 100%);
+    --btn-primary-bg-hover: linear-gradient(135deg var(--in-oklab), #f5dfb0 0%, #dab163 55%, #edd08c 100%);
+    --btn-primary-ink: #0f1d32;
+    --btn-primary-border: rgba(248, 230, 182, 0.78);
+    --btn-primary-icon: #142742;
+    --btn-primary-shadow:
+      inset 0 1px 0 rgba(255, 252, 240, 0.72),
+      0 8px 22px -8px rgba(217, 180, 104, 0.42);
+    --btn-primary-shadow-hover:
+      inset 0 1px 0 rgba(255, 252, 240, 0.9),
+      0 12px 28px -8px rgba(217, 180, 104, 0.58);
 
-    --btn-secondary-bg: rgba(16, 31, 54, 0.72);
-    --btn-secondary-bg-hover: rgba(31, 53, 88, 0.92);
-    --btn-secondary-ink: #f6f0e4;
-    --btn-secondary-border: rgba(217, 180, 104, 0.48);
+    --btn-secondary-bg: rgba(15, 29, 50, 0.62);
+    --btn-secondary-bg-hover: rgba(27, 48, 80, 0.88);
+    --btn-secondary-ink: #f4ebd8;
+    --btn-secondary-border: rgba(224, 190, 122, 0.56);
+    --btn-secondary-icon: #e5c37e;
+    --btn-secondary-shadow:
+      inset 0 0 0 2.5px rgba(15, 29, 50, 0.7),
+      inset 0 0 0 3.25px rgba(224, 190, 122, 0.24),
+      0 6px 18px -8px rgba(0, 0, 0, 0.45);
+    --btn-secondary-shadow-hover:
+      inset 0 0 0 2.5px rgba(27, 48, 80, 0.7),
+      inset 0 0 0 3.25px rgba(224, 190, 122, 0.45),
+      0 10px 22px -8px rgba(0, 0, 0, 0.55);
 
     --focus-ring: #f2d594;
     --shadow-card:
@@ -188,14 +224,31 @@
   --aurora-2: rgba(56, 114, 196, 0.2);
   --vignette: radial-gradient(ellipse 80% 75% at 50% 45%, transparent 30%, rgba(4, 10, 20, 0.68) 100%);
 
-  --btn-primary-bg: #e2be76;
-  --btn-primary-bg-hover: #efd196;
-  --btn-primary-ink: #0d192b;
+  --btn-primary-bg: linear-gradient(135deg var(--in-oklab), #edd398 0%, #cfa454 55%, #e5c378 100%);
+  --btn-primary-bg-hover: linear-gradient(135deg var(--in-oklab), #f5dfb0 0%, #dab163 55%, #edd08c 100%);
+  --btn-primary-ink: #0f1d32;
+  --btn-primary-border: rgba(248, 230, 182, 0.78);
+  --btn-primary-icon: #142742;
+  --btn-primary-shadow:
+    inset 0 1px 0 rgba(255, 252, 240, 0.72),
+    0 8px 22px -8px rgba(217, 180, 104, 0.42);
+  --btn-primary-shadow-hover:
+    inset 0 1px 0 rgba(255, 252, 240, 0.9),
+    0 12px 28px -8px rgba(217, 180, 104, 0.58);
 
-  --btn-secondary-bg: rgba(16, 31, 54, 0.72);
-  --btn-secondary-bg-hover: rgba(31, 53, 88, 0.92);
-  --btn-secondary-ink: #f6f0e4;
-  --btn-secondary-border: rgba(217, 180, 104, 0.48);
+  --btn-secondary-bg: rgba(15, 29, 50, 0.62);
+  --btn-secondary-bg-hover: rgba(27, 48, 80, 0.88);
+  --btn-secondary-ink: #f4ebd8;
+  --btn-secondary-border: rgba(224, 190, 122, 0.56);
+  --btn-secondary-icon: #e5c37e;
+  --btn-secondary-shadow:
+    inset 0 0 0 2.5px rgba(15, 29, 50, 0.7),
+    inset 0 0 0 3.25px rgba(224, 190, 122, 0.24),
+    0 6px 18px -8px rgba(0, 0, 0, 0.45);
+  --btn-secondary-shadow-hover:
+    inset 0 0 0 2.5px rgba(27, 48, 80, 0.7),
+    inset 0 0 0 3.25px rgba(224, 190, 122, 0.45),
+    0 10px 22px -8px rgba(0, 0, 0, 0.55);
 
   --focus-ring: #f2d594;
   --shadow-card:
@@ -1433,22 +1486,12 @@ html.card-opened .envelope-stage {
 
 .location-title {
   margin: 0 0 var(--space-2);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
   font-family: var(--font-display);
-  font-size: clamp(1.32rem, 1.15rem + 0.7vw, 1.55rem);
+  font-size: clamp(1.38rem, 1.18rem + 0.75vw, 1.62rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.22;
   color: var(--ink-primary);
   text-wrap: balance;
-}
-
-.inline-title-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-  color: var(--ink-accent);
-  flex-shrink: 0;
 }
 
 .location-desc {
@@ -1468,7 +1511,7 @@ html.card-opened .envelope-stage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.7rem;
   width: 100%;
 }
 
@@ -1478,31 +1521,42 @@ html.card-opened .envelope-stage {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  width: min(100%, 13.5rem);
-  min-block-size: 2.75rem; /* >= 44px touch target */
-  padding-block: 0.625rem;
-  padding-inline: 1.05rem;
-  border-radius: 0.35rem;
+  gap: 0.5rem;
+  width: min(100%, 14rem);
+  min-block-size: 2.8rem; /* >= 44px touch target */
+  padding-block: 0.65rem;
+  padding-inline: 1.25rem;
+  border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.835rem;
   font-weight: 500;
+  letter-spacing: 0.04em;
   line-height: 1.25;
   text-decoration: none;
   cursor: pointer;
   touch-action: manipulation;
   transition:
-    background-color var(--duration-interactive) ease,
+    background var(--duration-interactive) ease,
     border-color var(--duration-interactive) ease,
     color var(--duration-interactive) ease,
     box-shadow var(--duration-interactive) ease;
 }
 
+.btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
 .btn-primary {
-  background-color: var(--btn-primary-bg);
+  background: var(--btn-primary-bg);
   color: var(--btn-primary-ink);
-  border: 1px solid transparent;
-  box-shadow: 0 6px 18px -6px rgba(14, 29, 50, 0.38);
+  border: 1px solid var(--btn-primary-border);
+  box-shadow: var(--btn-primary-shadow);
+}
+
+.btn-primary .btn-icon {
+  color: var(--btn-primary-icon);
 }
 
 .btn-primary::after {
@@ -1511,18 +1565,18 @@ html.card-opened .envelope-stage {
   inset-block: 0;
   left: -120%;
   width: 75%;
-  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 246, 218, 0.34) 50%, transparent 80%);
   pointer-events: none;
 }
 
 .btn-primary:hover {
-  background-color: var(--btn-primary-bg-hover);
-  box-shadow: 0 10px 24px -8px rgba(14, 29, 50, 0.46);
+  background: var(--btn-primary-bg-hover);
+  box-shadow: var(--btn-primary-shadow-hover);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   body:not(.motion-paused) .btn-primary:hover::after {
-    animation: btn-sheen 680ms var(--ease-editorial);
+    animation: btn-sheen 720ms var(--ease-editorial);
   }
 }
 
@@ -1532,13 +1586,20 @@ html.card-opened .envelope-stage {
 }
 
 .btn-secondary {
-  background-color: var(--btn-secondary-bg);
+  background: var(--btn-secondary-bg);
   color: var(--btn-secondary-ink);
   border: 1px solid var(--btn-secondary-border);
+  box-shadow: var(--btn-secondary-shadow);
+}
+
+.btn-secondary .btn-icon {
+  color: var(--btn-secondary-icon);
 }
 
 .btn-secondary:hover {
-  background-color: var(--btn-secondary-bg-hover);
+  background: var(--btn-secondary-bg-hover);
+  border-color: var(--foil-gold);
+  box-shadow: var(--btn-secondary-shadow-hover);
 }
 
 .btn:focus-visible {
@@ -1625,7 +1686,7 @@ html.card-opened .envelope-stage {
 
   .btn {
     width: auto;
-    padding-inline: 0.9rem;
+    padding-inline: 1.05rem;
   }
 }
 
