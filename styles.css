@@ -591,7 +591,28 @@ html.card-opened .envelope-stage {
   box-shadow:
     0 24px 60px -16px rgba(6, 14, 28, 0.55),
     0 0 0 1px rgba(224, 190, 122, 0.18) inset;
+  cursor: pointer;
   overflow: visible;
+  transition: transform 320ms var(--ease-editorial), box-shadow 320ms ease;
+}
+
+.envelope-body::after {
+  content: '';
+  position: absolute;
+  inset: 0.45rem;
+  z-index: 6;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(224, 190, 122, 0.2);
+  pointer-events: none;
+  transition: opacity 320ms ease;
+}
+
+.envelope-body:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 30px 68px -16px rgba(6, 14, 28, 0.62),
+    0 0 28px -8px rgba(224, 190, 122, 0.25),
+    0 0 0 1px rgba(224, 190, 122, 0.3) inset;
 }
 
 /* Inner peeking ivory stationery letter */
@@ -695,7 +716,7 @@ html.card-opened .envelope-stage {
 /* Embossed Metallic Gold Wax Seal Button */
 .wax-seal {
   position: absolute;
-  top: 52%;
+  top: 48%;
   left: 50%;
   z-index: 8;
   transform: translate(-50%, -50%);
@@ -723,12 +744,14 @@ html.card-opened .envelope-stage {
   transition: transform 240ms var(--ease-spring), opacity 320ms ease, box-shadow 240ms ease;
 }
 
+.envelope-body:hover .wax-seal,
 .wax-seal:hover {
-  transform: translate(-50%, -50%) scale(1.07);
+  transform: translate(-50%, -50%) scale(1.08);
   box-shadow:
-    0 14px 32px -4px rgba(4, 10, 22, 0.72),
-    0 0 0 7px rgba(224, 190, 122, 0.34),
-    inset 0 2px 8px rgba(255, 250, 232, 0.8),
+    0 14px 34px -4px rgba(4, 10, 22, 0.72),
+    0 0 0 8px rgba(224, 190, 122, 0.34),
+    0 0 26px rgba(244, 219, 158, 0.45),
+    inset 0 2px 8px rgba(255, 250, 232, 0.85),
     inset 0 -4px 8px rgba(84, 55, 11, 0.55);
 }
 
@@ -744,32 +767,159 @@ html.card-opened .envelope-stage {
   border: 1px dashed rgba(28, 44, 68, 0.45);
 }
 
-.wax-seal-halo {
+.wax-seal-sheen {
   position: absolute;
-  inset: -0.4rem;
+  inset: 0;
   border-radius: 50%;
-  border: 1.5px solid rgba(236, 204, 134, 0.65);
+  overflow: hidden;
   pointer-events: none;
 }
 
+.wax-seal-sheen::after {
+  content: '';
+  position: absolute;
+  inset-block: -20%;
+  left: -130%;
+  width: 65%;
+  background: linear-gradient(105deg, transparent 15%, rgba(255, 252, 238, 0.62) 50%, transparent 85%);
+}
+
+.wax-seal-halo {
+  position: absolute;
+  inset: -0.35rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(238, 206, 138, 0.7);
+  pointer-events: none;
+}
+
+.wax-seal-halo-2 {
+  inset: -0.35rem;
+  border-color: rgba(246, 224, 170, 0.45);
+}
+
+/* Integrated Gold-Foil Stamp Hint Directly on Envelope Lower Pocket */
+.envelope-stamp-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 11%;
+  z-index: 8;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 195, 126, 0.34);
+  background: rgba(11, 23, 42, 0.56);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #edd092;
+  pointer-events: none;
+  transition: opacity 280ms ease, transform 280ms ease, border-color 240ms ease;
+}
+
+.envelope-body:hover .envelope-stamp-cue {
+  border-color: rgba(244, 219, 158, 0.68);
+  color: #fbf0cf;
+}
+
+.stamp-cue-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.stamp-sparkle {
+  width: 0.62rem;
+  height: 0.62rem;
+  color: #f4d898;
+  flex-shrink: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  body:not(.motion-paused) .wax-seal-halo {
-    animation: seal-pulse 2.4s ease-out infinite;
+  body:not(.motion-paused) .wax-seal {
+    animation: seal-breathe 3.4s ease-in-out infinite;
+  }
+
+  body:not(.motion-paused) .wax-seal-halo-1 {
+    animation: seal-pulse 2.8s cubic-bezier(0.2, 0.6, 0.35, 1) infinite;
+  }
+
+  body:not(.motion-paused) .wax-seal-halo-2 {
+    animation: seal-pulse 2.8s cubic-bezier(0.2, 0.6, 0.35, 1) 1.4s infinite;
+  }
+
+  body:not(.motion-paused) .wax-seal-sheen::after {
+    animation: seal-glint 3.8s ease-in-out infinite;
+  }
+
+  body:not(.motion-paused) .envelope-stamp-cue {
+    animation: cue-glow 3.4s ease-in-out infinite;
+  }
+
+  body:not(.motion-paused) .stamp-sparkle {
+    animation: star-pulse 2.6s ease-in-out infinite;
+  }
+
+  body:not(.motion-paused) .envelope-stage:not(.is-opening) .envelope-letter {
+    animation: letter-peek 3.4s ease-in-out infinite;
+  }
+}
+
+@keyframes seal-breathe {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.045);
   }
 }
 
 @keyframes seal-pulse {
   0% {
-    transform: scale(0.95);
-    opacity: 0.75;
+    transform: scale(0.96);
+    opacity: 0.78;
   }
   100% {
-    transform: scale(1.42);
+    transform: scale(1.62);
     opacity: 0;
   }
 }
 
+@keyframes seal-glint {
+  0%, 62% {
+    left: -130%;
+  }
+  100% {
+    left: 165%;
+  }
+}
+
+@keyframes cue-glow {
+  0%, 100% {
+    opacity: 0.78;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-2px);
+  }
+}
+
+@keyframes letter-peek {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 .wax-seal-monogram {
+  position: relative;
+  z-index: 2;
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
@@ -779,7 +929,14 @@ html.card-opened .envelope-stage {
 
 /* Opening Choreography States */
 .envelope-stage.is-opening .wax-seal {
+  animation: none;
   transform: translate(-50%, -50%) scale(0.65);
+  opacity: 0;
+}
+
+.envelope-stage.is-opening .envelope-stamp-cue,
+.envelope-stage.is-opening .envelope-body::after {
+  animation: none;
   opacity: 0;
 }
 
@@ -789,33 +946,17 @@ html.card-opened .envelope-stage {
 }
 
 .envelope-stage.is-opening .envelope-letter {
+  animation: none;
   transform: translateY(-48%);
   z-index: 6;
 }
 
 .envelope-recipient {
-  margin: 0 0 0.5rem;
-  font-family: var(--font-script);
-  font-size: clamp(2rem, 1.5rem + 2.4vw, 2.75rem);
-  line-height: 1.2;
-  color: var(--ink-primary);
-}
-
-.envelope-hint {
   margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--ink-muted);
-}
-
-.hint-dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background-color: var(--foil-gold);
+  font-family: var(--font-script);
+  font-size: clamp(2.1rem, 1.55rem + 2.4vw, 2.85rem);
+  line-height: 1.25;
+  color: var(--ink-primary);
 }
 
 /* ==========================================================================

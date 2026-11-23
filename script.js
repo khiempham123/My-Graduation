@@ -319,6 +319,14 @@
     openBtn.addEventListener('click', openInvitation);
   }
 
+  var envelopeBody = document.querySelector('.envelope-body');
+  if (envelopeBody) {
+    envelopeBody.addEventListener('click', function (e) {
+      if (e.target === openBtn || (openBtn && openBtn.contains(e.target))) return;
+      openInvitation();
+    });
+  }
+
   /* ------------------------------------------------------------------------
      5. Subtle Desktop 3D Foil Tilt & Specular Sheen on Card Hover
      ------------------------------------------------------------------------ */
