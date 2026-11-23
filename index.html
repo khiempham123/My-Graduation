@@ -113,6 +113,26 @@
     aria-label="Phong bì thiệp mời lễ tốt nghiệp"
   >
     <div class="envelope-wrapper">
+      <div class="envelope-school-logo">
+        <img
+          src="assets/hcmus-logo-color.png"
+          alt="Logo Trường Đại học Khoa học Tự nhiên, ĐHQG TP.HCM"
+          width="900"
+          height="737"
+          class="school-logo-img logo-light"
+          decoding="async"
+          fetchpriority="high"
+        >
+        <img
+          src="assets/hcmus-logo-white.png"
+          alt="Logo Trường Đại học Khoa học Tự nhiên, ĐHQG TP.HCM"
+          width="400"
+          height="326"
+          class="school-logo-img logo-dark"
+          decoding="async"
+          fetchpriority="high"
+        >
+      </div>
       <p class="envelope-kicker">Trường Đại học Khoa học Tự nhiên · 2026</p>
 
       <div class="envelope-scene" id="envelope-scene">
@@ -210,46 +230,56 @@
         <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
         <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
 
-        <!-- Ceremonial Laurel Wreath & Mortarboard Crown Emblem -->
+        <!-- Official HCMUS Crest Framed by Gold Laurel Flourish -->
         <header class="card-header reveal" style="--step: 1">
-          <div class="crest-emblem" aria-hidden="true">
-            <svg class="laurel-crest-svg" viewBox="0 0 180 96" focusable="false">
-              <!-- Flanking 4-point Sparkle Stars -->
-              <path class="star-twinkle star-1" d="M20 34l1.6 4.4L26 40l-4.4 1.6L20 46l-1.6-4.4L14 40l4.4-1.6L20 34z" fill="currentColor"/>
-              <path class="star-twinkle star-2" d="M160 34l1.6 4.4L166 40l-4.4 1.6L160 46l-1.6-4.4L154 40l4.4-1.6L160 34z" fill="currentColor"/>
-              <circle class="star-twinkle star-3" cx="90" cy="9" r="2.2" fill="currentColor"/>
+          <div class="school-crest-banner">
+            <svg class="laurel-wing laurel-wing-left" viewBox="0 0 58 84" aria-hidden="true" focusable="false">
+              <path class="star-twinkle star-1" d="M12 16l1.5 4L17.5 21.5l-4 1.5L12 27l-1.5-4L6.5 21.5l4-1.5L12 16z" fill="currentColor"/>
+              <path class="crest-draw" d="M52 78C31 71 20 53 23 30C24 21 29 13 36 8" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+              <path class="crest-draw" d="M23 45C14 41 13 31 19 27C23 32 25 38 23 45Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+              <path class="crest-draw" d="M28 28C22 21 24 12 32 11C33 17 32 23 28 28Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+              <path class="crest-draw" d="M29 59C20 59 15 52 19 45C25 48 29 53 29 59Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+              <path class="crest-draw" d="M40 70C31 73 24 68 26 61C32 62 37 65 40 70Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            </svg>
 
-              <!-- Left Laurel Wreath Branch -->
-              <path class="crest-draw" d="M84 84C56 80 38 62 39 36C40 24 46 16 54 11" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
-              <path class="crest-draw" d="M40 52C31 48 29 38 35 33C40 38 42 45 40 52Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M44 34C38 26 40 17 48 15C50 22 49 29 44 34Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M46 66C36 66 31 58 35 51C42 54 46 60 46 66Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M60 77C51 81 43 76 44 68C51 69 57 72 60 77Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M46 46C52 40 56 32 54 25C48 30 45 38 46 46Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
-              <path class="crest-draw" d="M55 62C60 56 62 49 58 43C53 48 52 55 55 62Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <div class="school-logo-frame">
+              <img
+                src="assets/hcmus-logo-color.png"
+                alt="Logo Trường Đại học Khoa học Tự nhiên, Đại học Quốc gia TP.HCM"
+                width="900"
+                height="737"
+                class="school-logo-img logo-light"
+                decoding="async"
+                fetchpriority="high"
+              >
+              <img
+                src="assets/hcmus-logo-white.png"
+                alt="Logo Trường Đại học Khoa học Tự nhiên, Đại học Quốc gia TP.HCM"
+                width="400"
+                height="326"
+                class="school-logo-img logo-dark"
+                decoding="async"
+                fetchpriority="high"
+              >
+            </div>
 
-              <!-- Right Laurel Wreath Branch (Mirrored) -->
-              <path class="crest-draw" d="M96 84C124 80 142 62 141 36C140 24 134 16 126 11" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
-              <path class="crest-draw" d="M140 52C149 48 151 38 145 33C140 38 138 45 140 52Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M136 34C142 26 140 17 132 15C130 22 131 29 136 34Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M134 66C144 66 149 58 145 51C138 54 134 60 134 66Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M120 77C129 81 137 76 136 68C129 69 123 72 120 77Z" fill="none" stroke="currentColor" stroke-width="1.15"/>
-              <path class="crest-draw" d="M134 46C128 40 124 32 126 25C132 30 135 38 134 46Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
-              <path class="crest-draw" d="M125 62C120 56 118 49 122 43C127 48 128 55 125 62Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
-
-              <!-- Center Academic Mortarboard (Mũ Cử Nhân) -->
-              <path class="crest-draw" d="M90 26L61 39l29 13 29-13-29-13z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
-              <path class="crest-draw" d="M72 44.5v11.2c0 3.7 8.1 6.8 18 6.8s18-3.1 18-6.8V44.5" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/>
-              <path class="crest-draw" d="M115 41v14.5" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/>
-              <circle cx="115" cy="57.5" r="2.1" fill="currentColor"/>
-
-              <!-- Bottom Ribbon Bow Knot -->
-              <path class="crest-draw" d="M84 84c3 2.5 9 2.5 12 0M86 86l-5 6M94 86l5 6" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            <svg class="laurel-wing laurel-wing-right" viewBox="0 0 58 84" aria-hidden="true" focusable="false">
+              <path class="star-twinkle star-2" d="M12 16l1.5 4L17.5 21.5l-4 1.5L12 27l-1.5-4L6.5 21.5l4-1.5L12 16z" fill="currentColor"/>
+              <path class="crest-draw" d="M52 78C31 71 20 53 23 30C24 21 29 13 36 8" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+              <path class="crest-draw" d="M23 45C14 41 13 31 19 27C23 32 25 38 23 45Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+              <path class="crest-draw" d="M28 28C22 21 24 12 32 11C33 17 32 23 28 28Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+              <path class="crest-draw" d="M29 59C20 59 15 52 19 45C25 48 29 53 29 59Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+              <path class="crest-draw" d="M40 70C31 73 24 68 26 61C32 62 37 65 40 70Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
             </svg>
           </div>
 
           <p class="class-badge">
             <span class="class-badge-line" aria-hidden="true"></span>
+            <svg class="cap-mini-icon" viewBox="0 0 32 22" aria-hidden="true" focusable="false">
+              <path d="M16 3L2 9.5 16 16l14-6.5L16 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8 12.2v4.6c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2v-4.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M28 10.5v6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
             <span>Niên khóa · 2026</span>
             <span class="class-badge-line" aria-hidden="true"></span>
           </p>

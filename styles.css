@@ -498,8 +498,20 @@ html.card-opened .envelope-stage {
   width: min(100%, 27rem);
 }
 
+.envelope-school-logo {
+  margin-block-end: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope-school-logo .school-logo-img {
+  width: clamp(4.5rem, 16vw, 5.5rem);
+  height: auto;
+}
+
 .envelope-kicker {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.15rem;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -929,7 +941,7 @@ html.card-opened .envelope-stage {
 }
 
 /* ==========================================================================
-   Header, Laurel Crest & Calligraphy Typography
+   Header, Official HCMUS Logo Crest & Calligraphy Typography
    ========================================================================== */
 .card-header {
   display: flex;
@@ -937,16 +949,89 @@ html.card-opened .envelope-stage {
   align-items: center;
 }
 
-.crest-emblem {
-  margin-block-end: var(--space-3);
+/* Official HCMUS Logo Theme Switching (faithful brand color in light, official white in dark) */
+.school-logo-img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo-light {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .logo-dark {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .logo-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-dark {
+  display: block;
+}
+
+.school-crest-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.65rem, 3cqi, 1.35rem);
+  margin-block-end: var(--space-4);
   color: var(--foil-gold);
 }
 
-.laurel-crest-svg {
-  width: clamp(8.25rem, 24cqi, 10.75rem);
+.school-logo-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.55rem;
+}
+
+.school-logo-frame .school-logo-img {
+  width: clamp(5.75rem, 19cqi, 7.25rem);
   height: auto;
-  display: block;
-  filter: drop-shadow(0 2px 6px rgba(180, 138, 62, 0.22));
+  filter: drop-shadow(0 3px 10px rgba(20, 39, 66, 0.12));
+}
+
+:root[data-theme="dark"] .school-logo-frame .school-logo-img {
+  filter: drop-shadow(0 4px 14px rgba(224, 190, 122, 0.22));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .school-logo-frame .school-logo-img {
+    filter: drop-shadow(0 4px 14px rgba(224, 190, 122, 0.22));
+  }
+}
+
+.laurel-wing {
+  width: clamp(2.5rem, 8.5cqi, 3.5rem);
+  height: auto;
+  flex-shrink: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 6px rgba(180, 138, 62, 0.2));
+}
+
+.laurel-wing-right {
+  transform: scaleX(-1);
+}
+
+.cap-mini-icon {
+  width: 1.2rem;
+  height: 0.85rem;
+  color: var(--foil-gold);
+  flex-shrink: 0;
 }
 
 /* SVG Stroke Draw-In on Card Reveal */
@@ -1721,5 +1806,13 @@ html.card-opened .envelope-stage {
   .foil-text {
     background-image: none;
     color: #142742;
+  }
+
+  .logo-light {
+    display: block !important;
+  }
+
+  .logo-dark {
+    display: none !important;
   }
 }
