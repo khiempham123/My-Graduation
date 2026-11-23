@@ -570,9 +570,10 @@ html.card-opened .envelope-stage {
 }
 
 .letter-title {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-family: var(--font-script);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
   color: #142742;
 }
 
@@ -1109,9 +1110,9 @@ html.card-opened .envelope-stage {
 }
 
 .eyebrow {
-  margin: 0 0 0.15rem;
+  margin: 0 0 0.25rem;
   font-family: var(--font-script);
-  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.45rem);
+  font-size: clamp(1.5rem, 1.2rem + 1.25vw, 2.05rem);
   font-weight: 400;
   line-height: 1.25;
   color: var(--ink-accent);
@@ -1120,11 +1121,11 @@ html.card-opened .envelope-stage {
 
 .main-title {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.15rem, 1.45rem + 3vw, 3.35rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.025em;
+  font-family: var(--font-script);
+  font-size: clamp(2.85rem, 2.05rem + 3.4vw, 4.35rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: 0.01em;
   color: var(--ink-primary);
   text-wrap: balance;
 }
