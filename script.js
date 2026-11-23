@@ -352,54 +352,7 @@
   }
 
   /* ------------------------------------------------------------------------
-     6. Live Engraved Countdown to 15:00 Sunday, December 6, 2026 (GMT+7)
-     ------------------------------------------------------------------------ */
-  var cdDays = document.getElementById('cd-days');
-  var cdHours = document.getElementById('cd-hours');
-  var cdMins = document.getElementById('cd-mins');
-  var cdSecs = document.getElementById('cd-secs');
-  var cdCaption = document.getElementById('countdown-caption');
-  var cdGrid = document.getElementById('countdown-grid');
-
-  var eventStart = Date.parse('2026-12-06T15:00:00+07:00');
-  var eventEnd = Date.parse('2026-12-06T18:00:00+07:00');
-
-  function pad2(n) {
-    return n < 10 ? '0' + n : String(n);
-  }
-
-  function updateCountdown() {
-    if (!cdDays || !cdHours || !cdMins || !cdSecs) return;
-    var now = Date.now();
-    var diff = eventStart - now;
-
-    if (diff <= 0) {
-      if (now <= eventEnd) {
-        if (cdCaption) cdCaption.textContent = 'Buổi lễ đang diễn ra — Hân hạnh đón tiếp!';
-      } else {
-        if (cdCaption) cdCaption.textContent = 'Cảm ơn sự hiện diện quý báu của mọi người!';
-      }
-      if (cdGrid) cdGrid.style.display = 'none';
-      return;
-    }
-
-    var totalSeconds = Math.floor(diff / 1000);
-    var days = Math.floor(totalSeconds / 86400);
-    var hours = Math.floor((totalSeconds % 86400) / 3600);
-    var mins = Math.floor((totalSeconds % 3600) / 60);
-    var secs = totalSeconds % 60;
-
-    cdDays.textContent = pad2(days);
-    cdHours.textContent = pad2(hours);
-    cdMins.textContent = pad2(mins);
-    cdSecs.textContent = pad2(secs);
-  }
-
-  updateCountdown();
-  window.setInterval(updateCountdown, 1000);
-
-  /* ------------------------------------------------------------------------
-     7. Calendar (.ics) Export
+     6. Calendar (.ics) Export
      ------------------------------------------------------------------------ */
   var addCalendarBtn = document.getElementById('add-calendar-btn');
   var statusEl = document.getElementById('action-status');
@@ -414,11 +367,11 @@
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',
       'UID:graduation-pham-gia-khiem-20261206@khiempham123.github.io',
-      'DTSTAMP:20261123T024500Z',
+      'DTSTAMP:20261123T040000Z',
       'DTSTART:20261206T080000Z',
       'DTEND:20261206T103000Z',
       'SUMMARY:Lễ Tốt Nghiệp — Phạm Gia Khiêm',
-      'DESCRIPTION:Trân trọng kính mời tham dự Lễ Tốt Nghiệp của Tân Cử nhân Công nghệ Thông tin Phạm Gia Khiêm.\\nBản đồ: https://www.google.com/maps/search/?api=1&query=University+of+Science+227+Nguyen+Van+Cu',
+      'DESCRIPTION:Thư mời tham dự Lễ Tốt Nghiệp của Tân Cử nhân Công nghệ Thông tin Phạm Gia Khiêm.\\nBản đồ: https://www.google.com/maps/search/?api=1&query=University+of+Science+227+Nguyen+Van+Cu',
       'LOCATION:Giảng đường 1\\, Cơ sở 227 Nguyễn Văn Cừ\\, Trường Đại học Khoa học Tự nhiên\\, TP. Hồ Chí Minh',
       'URL:https://www.google.com/maps/search/?api=1&query=University+of+Science+227+Nguyen+Van+Cu',
       'END:VEVENT',
