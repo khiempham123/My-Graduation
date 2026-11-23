@@ -1,12 +1,14 @@
 /* ==========================================================================
-   Graduation Invitation — Design Tokens & Fine Academic Stationery Styles
+   Graduation Invitation — Royal Academic Foil Edition (Canva / Dribbble Craft)
    ========================================================================== */
 
 :root {
   color-scheme: light dark;
+  --in-oklab: ;
 
-  /* Typography */
-  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  /* Typography Trio (100% Verified Vietnamese Diacritics) */
+  --font-script: 'Great Vibes', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   /* Spacing Scale (8px / 0.5rem rhythm) */
@@ -19,78 +21,195 @@
   --space-7: 2.5rem;
   --space-8: 3.25rem;
 
-  /* Light Mode Tokens (Warm Cotton Ivory + Academic Navy + Champagne Gold) */
-  --bg-canvas: #ebe5d9;
-  --bg-canvas-glow: #f5f1e8;
-  --bg-card: #fcfbf7;
-  --bg-panel: #f5f1e7;
-  --bg-badge: #f2ece0;
+  /* Light Theme — Warm Cotton Ivory + Academic Navy + Champagne Gold Foil */
+  --bg-canvas: #eee7da;
+  --bg-card: rgba(253, 251, 246, 0.94);
+  --bg-card-solid: #fdfbf6;
+  --bg-panel: rgba(245, 239, 227, 0.88);
+  --bg-badge: #f4ecdc;
+  --bg-medallion: #f7f1e4;
+  --bg-util: rgba(253, 251, 246, 0.86);
+  --bg-util-hover: rgba(244, 236, 220, 0.98);
 
-  --ink-primary: #142742;     /* 14.3:1 on --bg-card */
-  --ink-body: #2a3444;        /* 11.9:1 on --bg-card */
-  --ink-muted: #505c6e;       /*  6.6:1 on --bg-card */
-  --ink-accent: #7a591e;      /*  6.2:1 on --bg-card */
+  --ink-primary: #142742;     /* 14.3:1 on ivory */
+  --ink-body: #283344;        /* 12.1:1 on ivory */
+  --ink-muted: #4f5c6f;       /*  6.6:1 on ivory */
+  --ink-accent: #7a561a;      /*  6.5:1 on ivory */
 
-  --ornament-gold: #a98643;
-  --border-outer: #d3c5aa;
-  --border-inner: #e4dac5;
-  --border-subtle: #dfd5c1;
+  --foil-gold: #b48a3e;
+  --foil-gold-bright: #d7b165;
+  --foil-text-gradient: linear-gradient(
+    112deg var(--in-oklab),
+    #142742 0%,
+    #244068 28%,
+    #7a561a 50%,
+    #244068 72%,
+    #142742 100%
+  );
+
+  --border-outer: #d1bfa0;
+  --border-inner: #e4d8c0;
+  --border-subtle: #ded1b8;
+  --botanical-color: rgba(169, 130, 62, 0.55);
+  --aurora-1: rgba(215, 177, 101, 0.24);
+  --aurora-2: rgba(20, 39, 66, 0.08);
+  --vignette: radial-gradient(ellipse 80% 75% at 50% 45%, transparent 35%, rgba(230, 219, 198, 0.55) 100%);
 
   --btn-primary-bg: #142742;
-  --btn-primary-bg-hover: #1e3a5f;
-  --btn-primary-ink: #fcfbf7;
+  --btn-primary-bg-hover: #1f3c64;
+  --btn-primary-ink: #fdfbf6;
 
-  --btn-secondary-bg: #fcfbf7;
-  --btn-secondary-bg-hover: #efe9dc;
+  --btn-secondary-bg: rgba(253, 251, 246, 0.92);
+  --btn-secondary-bg-hover: #efe6d5;
   --btn-secondary-ink: #142742;
-  --btn-secondary-border: #b8a684;
+  --btn-secondary-border: #b59e76;
 
-  --focus-ring: #7a591e;
+  --focus-ring: #7a561a;
   --shadow-card:
-    0 1px 2px rgba(20, 39, 66, 0.05),
-    0 14px 36px -12px rgba(20, 39, 66, 0.14),
-    0 28px 64px -24px rgba(20, 39, 66, 0.12);
-  --shadow-qr: 0 4px 14px -4px rgba(20, 39, 66, 0.12);
+    0 2px 4px rgba(20, 39, 66, 0.06),
+    0 18px 46px -14px rgba(20, 39, 66, 0.16),
+    0 34px 72px -26px rgba(105, 81, 41, 0.22);
+  --shadow-qr: 0 8px 22px -6px rgba(20, 39, 66, 0.16);
+
+  /* Envelope Tokens (Royal Navy Satin + Embossed Gold Seal) */
+  --env-base: #132540;
+  --env-front: #182e4f;
+  --env-side: #112139;
+  --env-flap: #1b3459;
+  --env-border: rgba(224, 190, 122, 0.48);
 
   /* Motion Tokens */
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-reveal: 560ms;
-  --duration-interactive: 150ms;
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --duration-reveal: 680ms;
+  --duration-interactive: 160ms;
+
+  /* Artwork visibility flags */
+  --ivory-art-opacity: 1;
+  --navy-art-opacity: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+@supports (background: linear-gradient(in oklab, white, black)) {
   :root {
-    --bg-canvas: #09111d;
-    --bg-canvas-glow: #132238;
-    --bg-card: #111d2f;
-    --bg-panel: #16253b;
-    --bg-badge: #1a2b44;
-
-    --ink-primary: #f5f0e6;   /* 14.9:1 on --bg-card */
-    --ink-body: #dce3ee;      /* 12.2:1 on --bg-card */
-    --ink-muted: #aebbd0;     /*  7.7:1 on --bg-card */
-    --ink-accent: #e0be7a;    /*  9.6:1 on --bg-card */
-
-    --ornament-gold: #cfa960;
-    --border-outer: #324764;
-    --border-inner: #253853;
-    --border-subtle: #2a3e5c;
-
-    --btn-primary-bg: #e0be7a;
-    --btn-primary-bg-hover: #ebd097;
-    --btn-primary-ink: #101b2c;
-
-    --btn-secondary-bg: #111d2f;
-    --btn-secondary-bg-hover: #1d2f49;
-    --btn-secondary-ink: #f5f0e6;
-    --btn-secondary-border: #486082;
-
-    --focus-ring: #e0be7a;
-    --shadow-card:
-      0 2px 6px rgba(0, 0, 0, 0.35),
-      0 24px 60px -16px rgba(0, 0, 0, 0.65);
-    --shadow-qr: 0 6px 20px -4px rgba(0, 0, 0, 0.4);
+    --in-oklab: in oklab;
   }
+}
+
+/* Dark Theme via System Preference (unless explicitly overridden to light) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-canvas: #070f1c;
+    --bg-card: rgba(15, 29, 50, 0.88);
+    --bg-card-solid: #0f1d32;
+    --bg-panel: rgba(21, 38, 64, 0.82);
+    --bg-badge: rgba(29, 49, 80, 0.88);
+    --bg-medallion: rgba(29, 49, 80, 0.9);
+    --bg-util: rgba(16, 31, 54, 0.78);
+    --bg-util-hover: rgba(27, 48, 80, 0.95);
+
+    --ink-primary: #f6f0e4;   /* 15.1:1 on navy */
+    --ink-body: #dde4ef;      /* 12.4:1 on navy */
+    --ink-muted: #b0bed3;     /*  7.9:1 on navy */
+    --ink-accent: #e5c37e;    /* 10.1:1 on navy */
+
+    --foil-gold: #d9b468;
+    --foil-gold-bright: #f8e5b4;
+    --foil-text-gradient: linear-gradient(
+      112deg var(--in-oklab),
+      #d6af63 0%,
+      #fbf0cf 28%,
+      #e5c073 50%,
+      #fbf0cf 74%,
+      #d6af63 100%
+    );
+
+    --border-outer: rgba(217, 180, 104, 0.42);
+    --border-inner: rgba(217, 180, 104, 0.22);
+    --border-subtle: rgba(196, 174, 130, 0.22);
+    --botanical-color: rgba(224, 190, 122, 0.45);
+    --aurora-1: rgba(217, 180, 104, 0.14);
+    --aurora-2: rgba(56, 114, 196, 0.2);
+    --vignette: radial-gradient(ellipse 80% 75% at 50% 45%, transparent 30%, rgba(4, 10, 20, 0.68) 100%);
+
+    --btn-primary-bg: #e2be76;
+    --btn-primary-bg-hover: #efd196;
+    --btn-primary-ink: #0d192b;
+
+    --btn-secondary-bg: rgba(16, 31, 54, 0.72);
+    --btn-secondary-bg-hover: rgba(31, 53, 88, 0.92);
+    --btn-secondary-ink: #f6f0e4;
+    --btn-secondary-border: rgba(217, 180, 104, 0.48);
+
+    --focus-ring: #f2d594;
+    --shadow-card:
+      0 2px 8px rgba(0, 0, 0, 0.4),
+      0 26px 68px -18px rgba(0, 0, 0, 0.75),
+      0 0 42px -12px rgba(217, 180, 104, 0.16);
+    --shadow-qr: 0 10px 28px -6px rgba(0, 0, 0, 0.55);
+
+    --ivory-art-opacity: 0;
+    --navy-art-opacity: 1;
+  }
+}
+
+/* Explicit Dark Theme Override via Toolbar Toggle */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-canvas: #070f1c;
+  --bg-card: rgba(15, 29, 50, 0.88);
+  --bg-card-solid: #0f1d32;
+  --bg-panel: rgba(21, 38, 64, 0.82);
+  --bg-badge: rgba(29, 49, 80, 0.88);
+  --bg-medallion: rgba(29, 49, 80, 0.9);
+  --bg-util: rgba(16, 31, 54, 0.78);
+  --bg-util-hover: rgba(27, 48, 80, 0.95);
+
+  --ink-primary: #f6f0e4;
+  --ink-body: #dde4ef;
+  --ink-muted: #b0bed3;
+  --ink-accent: #e5c37e;
+
+  --foil-gold: #d9b468;
+  --foil-gold-bright: #f8e5b4;
+  --foil-text-gradient: linear-gradient(
+    112deg var(--in-oklab),
+    #d6af63 0%,
+    #fbf0cf 28%,
+    #e5c073 50%,
+    #fbf0cf 74%,
+    #d6af63 100%
+  );
+
+  --border-outer: rgba(217, 180, 104, 0.42);
+  --border-inner: rgba(217, 180, 104, 0.22);
+  --border-subtle: rgba(196, 174, 130, 0.22);
+  --botanical-color: rgba(224, 190, 122, 0.45);
+  --aurora-1: rgba(217, 180, 104, 0.14);
+  --aurora-2: rgba(56, 114, 196, 0.2);
+  --vignette: radial-gradient(ellipse 80% 75% at 50% 45%, transparent 30%, rgba(4, 10, 20, 0.68) 100%);
+
+  --btn-primary-bg: #e2be76;
+  --btn-primary-bg-hover: #efd196;
+  --btn-primary-ink: #0d192b;
+
+  --btn-secondary-bg: rgba(16, 31, 54, 0.72);
+  --btn-secondary-bg-hover: rgba(31, 53, 88, 0.92);
+  --btn-secondary-ink: #f6f0e4;
+  --btn-secondary-border: rgba(217, 180, 104, 0.48);
+
+  --focus-ring: #f2d594;
+  --shadow-card:
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 26px 68px -18px rgba(0, 0, 0, 0.75),
+    0 0 42px -12px rgba(217, 180, 104, 0.16);
+  --shadow-qr: 0 10px 28px -6px rgba(0, 0, 0, 0.55);
+
+  --ivory-art-opacity: 0;
+  --navy-art-opacity: 1;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 /* Base Reset */
@@ -113,13 +232,10 @@ body {
   line-height: 1.65;
   color: var(--ink-body);
   background-color: var(--bg-canvas);
-  background-image: radial-gradient(
-    ellipse 85% 70% at 50% 18%,
-    var(--bg-canvas-glow) 0%,
-    var(--bg-canvas) 75%
-  );
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  transition: background-color 360ms ease, color 360ms ease;
 }
 
 .sr-only {
@@ -134,169 +250,834 @@ body {
   border: 0;
 }
 
-/* Page Shell */
+/* ==========================================================================
+   Multi-Layered Illustrated & Living Background Stage
+   ========================================================================== */
+.bg-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-artwork {
+  position: absolute;
+  inset: -4%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 550ms ease;
+  will-change: transform;
+}
+
+.bg-artwork-ivory {
+  background-image: url('assets/bg-ivory.jpg');
+  opacity: var(--ivory-art-opacity);
+}
+
+.bg-artwork-navy {
+  background-image: url('assets/bg-navy.jpg');
+  opacity: var(--navy-art-opacity);
+}
+
+.bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: var(--vignette);
+}
+
+.bg-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(68px);
+  will-change: transform, opacity;
+}
+
+.bg-aurora-1 {
+  width: min(72vw, 44rem);
+  height: min(72vw, 44rem);
+  top: -16%;
+  left: -10%;
+  background: radial-gradient(circle, var(--aurora-1) 0%, transparent 70%);
+}
+
+.bg-aurora-2 {
+  width: min(68vw, 40rem);
+  height: min(68vw, 40rem);
+  bottom: -18%;
+  right: -12%;
+  background: radial-gradient(circle, var(--aurora-2) 0%, transparent 70%);
+}
+
+.fx-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.motion-paused) .bg-artwork {
+    animation: bg-breathe 26s ease-in-out infinite alternate;
+  }
+
+  body:not(.motion-paused) .bg-aurora-1 {
+    animation: aurora-drift-a 19s ease-in-out infinite alternate;
+  }
+
+  body:not(.motion-paused) .bg-aurora-2 {
+    animation: aurora-drift-b 23s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes bg-breathe {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.055) translate3d(-0.8%, -0.8%, 0);
+  }
+}
+
+@keyframes aurora-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.72;
+  }
+  to {
+    transform: translate3d(8%, 6%, 0) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes aurora-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.05);
+    opacity: 0.65;
+  }
+  to {
+    transform: translate3d(-7%, -8%, 0) scale(0.95);
+    opacity: 0.95;
+  }
+}
+
+/* ==========================================================================
+   Subtle Floating Utility Bar (Theme, Confetti, Motion Pause)
+   ========================================================================== */
+.utility-bar {
+  position: fixed;
+  top: max(0.875rem, env(safe-area-inset-top));
+  right: max(0.875rem, env(safe-area-inset-right));
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.util-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--border-outer);
+  background-color: var(--bg-util);
+  color: var(--ink-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px -4px rgba(10, 20, 38, 0.18);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background-color var(--duration-interactive) ease,
+    border-color var(--duration-interactive) ease,
+    color var(--duration-interactive) ease;
+}
+
+.util-btn:hover {
+  background-color: var(--bg-util-hover);
+  border-color: var(--foil-gold);
+}
+
+.util-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.util-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* Sun / Moon icon swap depending on resolved theme */
+.icon-sun {
+  display: none;
+}
+
+.icon-moon {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+/* Pause / Play icon swap */
+.icon-play {
+  display: none;
+}
+
+body.motion-paused .icon-pause {
+  display: none;
+}
+
+body.motion-paused .icon-play {
+  display: block;
+}
+
+/* ==========================================================================
+   Ceremonial Wax-Seal Envelope Opening Stage
+   ========================================================================== */
+.envelope-stage {
+  display: none;
+}
+
+html.js-enhanced:not(.card-opened) .envelope-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  transition: opacity 540ms var(--ease-editorial), visibility 540ms ease;
+}
+
+html.js-enhanced:not(.card-opened) .page {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.98);
+}
+
+html.card-opened .envelope-stage {
+  display: none;
+}
+
+.envelope-stage.is-opening {
+  pointer-events: none;
+}
+
+.envelope-stage.is-fading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.envelope-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: min(100%, 27rem);
+}
+
+.envelope-kicker {
+  margin: 0 0 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-accent);
+  text-wrap: balance;
+}
+
+.envelope-scene {
+  position: relative;
+  width: min(100%, 24.5rem);
+  aspect-ratio: 1.46 / 1;
+  perspective: 1200px;
+  margin-block-end: 1.5rem;
+}
+
+.envelope-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background: linear-gradient(155deg var(--in-oklab), var(--env-base) 0%, #0b172a 100%);
+  border: 1px solid var(--env-border);
+  box-shadow:
+    0 24px 60px -16px rgba(6, 14, 28, 0.55),
+    0 0 0 1px rgba(224, 190, 122, 0.18) inset;
+  overflow: visible;
+}
+
+/* Inner peeking ivory stationery letter */
+.envelope-letter {
+  position: absolute;
+  inset-inline: 8%;
+  top: 10%;
+  bottom: 12%;
+  border-radius: 0.3rem;
+  background: linear-gradient(180deg, #fdfbf6 0%, #f4ede0 100%);
+  border: 1px solid #d7c7a7;
+  box-shadow: 0 6px 20px rgba(8, 16, 30, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 1rem;
+  z-index: 2;
+  transition: transform 680ms var(--ease-editorial);
+}
+
+.letter-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7a561a;
+  font-weight: 600;
+}
+
+.letter-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #142742;
+}
+
+.letter-rule {
+  width: 3rem;
+  height: 1px;
+  background-color: #c6a564;
+  margin-block: 0.2rem;
+}
+
+.letter-name {
+  font-family: var(--font-script);
+  font-size: 1.45rem;
+  color: #142742;
+}
+
+/* Left / Right / Bottom Envelope Folds */
+.envelope-pocket-left,
+.envelope-pocket-right,
+.envelope-pocket-bottom {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.envelope-pocket-left {
+  z-index: 3;
+  background: linear-gradient(115deg, var(--env-side) 0%, #162b4a 100%);
+  clip-path: polygon(0 0, 52% 52%, 0 100%);
+}
+
+.envelope-pocket-right {
+  z-index: 3;
+  background: linear-gradient(245deg, var(--env-side) 0%, #162b4a 100%);
+  clip-path: polygon(100% 0, 48% 52%, 100% 100%);
+}
+
+.envelope-pocket-bottom {
+  z-index: 4;
+  background: linear-gradient(0deg, #0f2038 0%, var(--env-front) 100%);
+  clip-path: polygon(0 100%, 50% 45%, 100% 100%);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* 3D Animated Top Flap */
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 620ms var(--ease-editorial);
+  pointer-events: none;
+}
+
+.envelope-flap-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: linear-gradient(180deg, #213d68 0%, var(--env-flap) 78%, #162c4d 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 56%);
+  filter: drop-shadow(0 6px 10px rgba(4, 10, 20, 0.35));
+}
+
+/* Embossed Metallic Gold Wax Seal Button */
+.wax-seal {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  z-index: 8;
+  transform: translate(-50%, -50%);
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 2px solid #f4dc9e;
+  background: radial-gradient(
+    circle at 32% 28%,
+    #fbf0ce 0%,
+    #e0ba6c 34%,
+    #b68836 74%,
+    #8c621c 100%
+  );
+  box-shadow:
+    0 10px 24px -4px rgba(4, 10, 22, 0.65),
+    0 0 0 4px rgba(217, 180, 104, 0.22),
+    inset 0 2px 6px rgba(255, 250, 232, 0.65),
+    inset 0 -4px 8px rgba(84, 55, 11, 0.55);
+  color: #1c2c44;
+  cursor: pointer;
+  touch-action: manipulation;
+  display: grid;
+  place-items: center;
+  transition: transform 240ms var(--ease-spring), opacity 320ms ease, box-shadow 240ms ease;
+}
+
+.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.07);
+  box-shadow:
+    0 14px 32px -4px rgba(4, 10, 22, 0.72),
+    0 0 0 7px rgba(224, 190, 122, 0.34),
+    inset 0 2px 8px rgba(255, 250, 232, 0.8),
+    inset 0 -4px 8px rgba(84, 55, 11, 0.55);
+}
+
+.wax-seal:focus-visible {
+  outline: 3px solid #f8e5b4;
+  outline-offset: 6px;
+}
+
+.wax-seal-ring {
+  position: absolute;
+  inset: 0.34rem;
+  border-radius: 50%;
+  border: 1px dashed rgba(28, 44, 68, 0.45);
+}
+
+.wax-seal-halo {
+  position: absolute;
+  inset: -0.4rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(236, 204, 134, 0.65);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.motion-paused) .wax-seal-halo {
+    animation: seal-pulse 2.4s ease-out infinite;
+  }
+}
+
+@keyframes seal-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+.wax-seal-monogram {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 0 rgba(255, 245, 214, 0.65);
+}
+
+/* Opening Choreography States */
+.envelope-stage.is-opening .wax-seal {
+  transform: translate(-50%, -50%) scale(0.65);
+  opacity: 0;
+}
+
+.envelope-stage.is-opening .envelope-flap {
+  transform: rotateX(-178deg);
+  z-index: 1;
+}
+
+.envelope-stage.is-opening .envelope-letter {
+  transform: translateY(-48%);
+  z-index: 6;
+}
+
+.envelope-recipient {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 2.75rem);
+  line-height: 1.2;
+  color: var(--ink-primary);
+}
+
+.envelope-hint {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.hint-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background-color: var(--foil-gold);
+}
+
+/* ==========================================================================
+   Main Invitation Stationery Card
+   ========================================================================== */
 .page {
+  position: relative;
+  z-index: 5;
   min-block-size: 100dvh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-block: clamp(1rem, 4dvh, 3rem);
+  padding-block: clamp(3.75rem, 6dvh, 4.5rem) clamp(1.75rem, 5dvh, 3.5rem);
   padding-inline: clamp(0.75rem, 3vw, 1.5rem);
-  padding-top: max(clamp(1rem, 4dvh, 3rem), env(safe-area-inset-top));
-  padding-bottom: max(clamp(1rem, 4dvh, 3rem), env(safe-area-inset-bottom));
+  padding-top: max(clamp(3.75rem, 6dvh, 4.5rem), calc(env(safe-area-inset-top) + 3.25rem));
+  padding-bottom: max(clamp(1.75rem, 5dvh, 3.5rem), env(safe-area-inset-bottom));
+  transition: opacity 640ms var(--ease-editorial), transform 680ms var(--ease-editorial);
 }
 
-/* Invitation Stationery Card */
 .invitation {
   position: relative;
   width: 100%;
   min-inline-size: 0;
-  max-inline-size: 42rem;
+  max-inline-size: 43rem;
   container-type: inline-size;
   container-name: card;
   background-color: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-outer);
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   box-shadow: var(--shadow-card);
   padding: clamp(0.625rem, 2.2vw, 1.25rem);
+  overflow: hidden;
+  isolation: isolate;
+  transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 240ms var(--ease-editorial), background-color 360ms ease, border-color 360ms ease;
+}
+
+/* Interactive Specular Metallic Foil Sheen on Desktop Hover */
+.card-foil-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  opacity: var(--sheen-opacity, 0);
+  background: radial-gradient(
+    28rem circle at var(--sheen-x, 50%) var(--sheen-y, 35%),
+    rgba(244, 219, 158, 0.16) 0%,
+    transparent 65%
+  );
+  transition: opacity 320ms ease;
 }
 
 .invitation-inner {
+  position: relative;
+  z-index: 1;
   border: 1px solid var(--border-inner);
-  border-radius: 0.25rem;
-  padding-block: clamp(1.85rem, 5cqi, 3.25rem);
-  padding-inline: clamp(1.125rem, 5.5cqi, 3.25rem);
+  border-radius: 0.35rem;
+  padding-block: clamp(2rem, 5.5cqi, 3.35rem);
+  padding-inline: clamp(1.125rem, 5.8cqi, 3.25rem);
   text-align: center;
+  overflow: hidden;
   overflow-wrap: break-word;
 }
 
-/* Corner Filigree Ornaments */
-.corner {
+/* Fine Geometric Double-Corner Framing Brackets */
+.frame-corner {
   position: absolute;
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--ornament-gold);
+  width: 1.35rem;
+  height: 1.35rem;
+  border-color: var(--foil-gold);
+  border-style: solid;
+  border-width: 0;
+  opacity: 0.72;
   pointer-events: none;
-  opacity: 0.85;
 }
 
-.corner-tl {
+.frame-corner-tl {
+  top: 0.65rem;
+  left: 0.65rem;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.frame-corner-tr {
+  top: 0.65rem;
+  right: 0.65rem;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.frame-corner-bl {
+  bottom: 0.65rem;
+  left: 0.65rem;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.frame-corner-br {
+  bottom: 0.65rem;
+  right: 0.65rem;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+/* Botanical Gold Eucalyptus / Laurel Line-Art Corners */
+.botanical {
+  position: absolute;
+  width: clamp(4rem, 12cqi, 6.25rem);
+  height: clamp(4rem, 12cqi, 6.25rem);
+  color: var(--botanical-color);
+  pointer-events: none;
+  z-index: 2;
+  transform-origin: center;
+}
+
+.botanical-tl {
   top: 0.5rem;
   left: 0.5rem;
 }
 
-.corner-tr {
+.botanical-tr {
   top: 0.5rem;
   right: 0.5rem;
   transform: scaleX(-1);
 }
 
-.corner-bl {
+.botanical-bl {
   bottom: 0.5rem;
   left: 0.5rem;
   transform: scaleY(-1);
 }
 
-.corner-br {
+.botanical-br {
   bottom: 0.5rem;
   right: 0.5rem;
   transform: scale(-1);
 }
 
-/* Header & Academic Crest */
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.motion-paused) .botanical-tl {
+    animation: leaf-sway-tl 8s ease-in-out infinite alternate;
+  }
+  body:not(.motion-paused) .botanical-tr {
+    animation: leaf-sway-tr 8.6s ease-in-out infinite alternate;
+  }
+  body:not(.motion-paused) .botanical-bl {
+    animation: leaf-sway-bl 9.2s ease-in-out infinite alternate;
+  }
+  body:not(.motion-paused) .botanical-br {
+    animation: leaf-sway-br 8.4s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes leaf-sway-tl {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(1.8deg); }
+}
+
+@keyframes leaf-sway-tr {
+  from { transform: scaleX(-1) rotate(0deg); }
+  to   { transform: scaleX(-1) rotate(1.8deg); }
+}
+
+@keyframes leaf-sway-bl {
+  from { transform: scaleY(-1) rotate(0deg); }
+  to   { transform: scaleY(-1) rotate(1.6deg); }
+}
+
+@keyframes leaf-sway-br {
+  from { transform: scale(-1) rotate(0deg); }
+  to   { transform: scale(-1) rotate(1.6deg); }
+}
+
+/* ==========================================================================
+   Header, Laurel Crest & Calligraphy Typography
+   ========================================================================== */
 .card-header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.crest {
-  display: flex;
+.crest-emblem {
+  margin-block-end: var(--space-3);
+  color: var(--foil-gold);
+}
+
+.laurel-crest-svg {
+  width: clamp(8.25rem, 24cqi, 10.75rem);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(180, 138, 62, 0.22));
+}
+
+/* SVG Stroke Draw-In on Card Reveal */
+@media (prefers-reduced-motion: no-preference) {
+  html.card-opened body:not(.motion-paused) .crest-draw {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 0;
+    animation: svg-draw 1.45s var(--ease-editorial) both;
+  }
+
+  body:not(.motion-paused) .star-twinkle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: star-pulse 3.2s ease-in-out infinite;
+  }
+
+  body:not(.motion-paused) .star-2 {
+    animation-delay: 1.1s;
+  }
+
+  body:not(.motion-paused) .star-3 {
+    animation-delay: 0.55s;
+  }
+}
+
+@keyframes svg-draw {
+  from {
+    stroke-dashoffset: 240;
+    opacity: 0.2;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes star-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+.class-badge {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-3);
-  width: min(100%, 14rem);
-  margin-block-end: var(--space-4);
-  color: var(--ornament-gold);
+  gap: 0.65rem;
+  margin: 0 0 var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-accent);
 }
 
-.crest-line {
-  flex: 1;
+.class-badge-line {
+  width: 1.75rem;
   height: 1px;
-  background-color: var(--border-outer);
-}
-
-.crest-icon {
-  width: 2.75rem;
-  height: 1.75rem;
-  flex-shrink: 0;
+  background-color: var(--foil-gold);
+  opacity: 0.7;
 }
 
 .university-label {
   margin: 0 0 var(--space-5);
   font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--ink-muted);
   text-wrap: balance;
 }
 
 .eyebrow {
-  margin: 0 0 var(--space-2);
-  font-family: var(--font-display);
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.35rem);
-  font-style: italic;
-  font-weight: 500;
+  margin: 0 0 0.15rem;
+  font-family: var(--font-script);
+  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.45rem);
+  font-weight: 400;
+  line-height: 1.25;
   color: var(--ink-accent);
-  letter-spacing: 0.03em;
+  text-wrap: balance;
 }
 
 .main-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 1.55rem + 3vw, 3.4rem);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: 0.02em;
+  font-size: clamp(2.15rem, 1.45rem + 3vw, 3.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.025em;
   color: var(--ink-primary);
   text-wrap: balance;
 }
 
-/* Ornamental Divider */
+.main-title:focus {
+  outline: none;
+}
+
+/* Ornamental Gold Divider */
 .divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-3);
-  width: min(100%, 13rem);
+  gap: var(--space-2);
+  width: min(100%, 15rem);
   margin-inline: auto;
   margin-block: var(--space-5);
+  color: var(--foil-gold);
 }
 
 .divider-compact {
-  width: min(100%, 9rem);
+  width: min(100%, 11rem);
   margin-block: 0 var(--space-4);
 }
 
 .divider-line {
   flex: 1;
   height: 1px;
-  background-color: var(--border-outer);
+  background: linear-gradient(90deg, transparent, var(--border-outer), transparent);
 }
 
-.divider-diamond {
-  width: 0.42rem;
-  height: 0.42rem;
-  transform: rotate(45deg);
-  border: 1px solid var(--ornament-gold);
-  background-color: var(--bg-card);
+.divider-ornament {
+  width: 2.75rem;
+  height: 1rem;
   flex-shrink: 0;
 }
 
-/* Honoree Spotlight */
+/* Honoree Spotlight with Subtle Gold-Foil Shimmer */
 .honoree {
   margin-block-end: var(--space-5);
 }
@@ -304,7 +1085,7 @@ body {
 .honoree-name {
   margin: 0 0 var(--space-3);
   font-family: var(--font-display);
-  font-size: clamp(1.95rem, 1.45rem + 2.2vw, 2.8rem);
+  font-size: clamp(2rem, 1.45rem + 2.3vw, 2.9rem);
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: 0.015em;
@@ -312,19 +1093,54 @@ body {
   text-wrap: balance;
 }
 
+.foil-text {
+  background-image: var(--foil-text-gradient);
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.motion-paused) .foil-text {
+    animation: foil-shimmer 7.5s ease-in-out infinite;
+  }
+}
+
+@keyframes foil-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .honoree-degree {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
   max-inline-size: 100%;
   margin: 0;
-  padding-block: 0.375rem;
-  padding-inline: 1.125rem;
-  border-block: 1px solid var(--border-outer);
+  padding-block: 0.42rem;
+  padding-inline: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-outer);
   background-color: var(--bg-badge);
-  font-size: clamp(0.875rem, 0.82rem + 0.3vw, 0.96rem);
+  font-size: clamp(0.78rem, 0.72rem + 0.35vw, 0.94rem);
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--ink-primary);
   text-wrap: balance;
+}
+
+.degree-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--ink-accent);
+  flex-shrink: 0;
 }
 
 /* Sincere Invitation Message */
@@ -338,7 +1154,7 @@ body {
 .message p {
   margin: 0;
   font-size: 0.96875rem;
-  line-height: 1.75;
+  line-height: 1.78;
   text-wrap: pretty;
 }
 
@@ -351,11 +1167,13 @@ body {
   color: var(--ink-primary);
 }
 
-/* Event Details Grid */
+/* ==========================================================================
+   Event Details Medallions & Engraved Countdown
+   ========================================================================== */
 .details {
   margin-block-end: var(--space-6);
   border-block: 1px solid var(--border-subtle);
-  padding-block: var(--space-5);
+  padding-block: var(--space-6) var(--space-5);
 }
 
 .detail-grid {
@@ -376,14 +1194,29 @@ body {
   border-block-start: 1px solid var(--border-subtle);
 }
 
+.medallion {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-block-end: var(--space-2);
+  border-radius: 50%;
+  border: 1px solid var(--border-outer);
+  background-color: var(--bg-medallion);
+  color: var(--ink-accent);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 3px var(--bg-card-solid), 0 0 0 4px var(--border-inner);
+}
+
+.medallion-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .detail-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-block-end: var(--space-1);
-  font-size: 0.78rem;
+  margin: 0;
+  font-size: 0.76rem;
   font-weight: 600;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ink-accent);
 }
@@ -414,14 +1247,68 @@ body {
   text-wrap: balance;
 }
 
-/* Vector Icons (Consistent 1.5–1.6px outline style) */
+/* Engraved Countdown Strip */
+.countdown-block {
+  margin-block-start: var(--space-5);
+  padding-block-start: var(--space-5);
+  border-block-start: 1px dashed var(--border-subtle);
+}
+
+.countdown-caption {
+  margin: 0 0 var(--space-3);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.625rem;
+  max-inline-size: 24rem;
+  margin-inline: auto;
+}
+
+.countdown-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 0.65rem;
+  padding-inline: 0.35rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-panel);
+}
+
+.countdown-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.1rem + 0.75vw, 1.65rem);
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.15;
+  color: var(--ink-primary);
+}
+
+.countdown-unit {
+  margin-block-start: 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-accent);
+}
+
+/* ==========================================================================
+   Location QR Code Viewfinder Panel & Buttons
+   ========================================================================== */
 .icon {
   width: 1.125rem;
   height: 1.125rem;
   flex-shrink: 0;
 }
 
-/* Location QR Code & Actions Panel */
 .location-panel {
   display: grid;
   grid-template-columns: 1fr;
@@ -430,19 +1317,71 @@ body {
   gap: var(--space-5);
   padding: clamp(1.25rem, 4cqi, 1.75rem);
   border: 1px solid var(--border-subtle);
-  border-radius: 0.375rem;
+  border-radius: 0.45rem;
   background-color: var(--bg-panel);
   margin-block-end: var(--space-6);
 }
 
+/* Outer metallic gold viewfinder frame (never overlaps QR quiet zone) */
+.qr-frame {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: fit-content;
+  padding: 0.45rem;
+}
+
+.qr-bracket {
+  position: absolute;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-color: var(--foil-gold);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.qr-bracket-tl {
+  top: 0;
+  left: 0;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-top-left-radius: 0.25rem;
+}
+
+.qr-bracket-tr {
+  top: 0;
+  right: 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-top-right-radius: 0.25rem;
+}
+
+.qr-bracket-bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.qr-bracket-br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-bottom-right-radius: 0.25rem;
+}
+
 /* Dedicated pure-white QR plaque for guaranteed scanning in BOTH light & dark modes */
 .qr-plaque {
-  width: min(100%, 10.5rem);
+  width: 9.75rem;
+  max-inline-size: 100%;
   aspect-ratio: 1;
-  padding: 0.5rem;
+  padding: 0.42rem;
   background-color: #ffffff;
   border: 1px solid #d7cbb3;
-  border-radius: 0.375rem;
+  border-radius: 0.32rem;
   box-shadow: var(--shadow-qr);
   display: grid;
   place-items: center;
@@ -464,18 +1403,28 @@ body {
 
 .location-title {
   margin: 0 0 var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.6rem);
+  font-size: clamp(1.32rem, 1.15rem + 0.7vw, 1.55rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--ink-primary);
   text-wrap: balance;
 }
 
+.inline-title-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--ink-accent);
+  flex-shrink: 0;
+}
+
 .location-desc {
   margin: 0 0 var(--space-4);
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.62;
   color: var(--ink-muted);
   text-wrap: pretty;
 }
@@ -494,6 +1443,8 @@ body {
 }
 
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -501,8 +1452,8 @@ body {
   width: min(100%, 13.5rem);
   min-block-size: 2.75rem; /* >= 44px touch target */
   padding-block: 0.625rem;
-  padding-inline: 1rem;
-  border-radius: 0.3125rem;
+  padding-inline: 1.05rem;
+  border-radius: 0.35rem;
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
@@ -513,17 +1464,41 @@ body {
   transition:
     background-color var(--duration-interactive) ease,
     border-color var(--duration-interactive) ease,
-    color var(--duration-interactive) ease;
+    color var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease;
 }
 
 .btn-primary {
   background-color: var(--btn-primary-bg);
   color: var(--btn-primary-ink);
   border: 1px solid transparent;
+  box-shadow: 0 6px 18px -6px rgba(14, 29, 50, 0.38);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: -120%;
+  width: 75%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+  pointer-events: none;
 }
 
 .btn-primary:hover {
   background-color: var(--btn-primary-bg-hover);
+  box-shadow: 0 10px 24px -8px rgba(14, 29, 50, 0.46);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.motion-paused) .btn-primary:hover::after {
+    animation: btn-sheen 680ms var(--ease-editorial);
+  }
+}
+
+@keyframes btn-sheen {
+  from { left: -100%; }
+  to   { left: 150%; }
 }
 
 .btn-secondary {
@@ -552,7 +1527,9 @@ body {
   margin: 0;
 }
 
-/* Footer */
+/* ==========================================================================
+   Closing Signature Footer
+   ========================================================================== */
 .card-footer {
   display: flex;
   flex-direction: column;
@@ -568,14 +1545,16 @@ body {
 
 .signature {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.55rem);
-  font-style: italic;
-  font-weight: 600;
+  font-family: var(--font-script);
+  font-size: clamp(1.95rem, 1.55rem + 1.5vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.25;
   color: var(--ink-primary);
 }
 
-/* Container Queries — Component-Driven Responsive Layout */
+/* ==========================================================================
+   Container Queries — Component-Driven Responsive Layout
+   ========================================================================== */
 @container card (min-width: 30rem) {
   .detail-grid {
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
@@ -599,7 +1578,7 @@ body {
   }
 
   .qr-plaque {
-    width: 9.5rem;
+    width: 8.75rem;
   }
 
   .location-info {
@@ -616,14 +1595,24 @@ body {
 
   .btn {
     width: auto;
+    padding-inline: 0.9rem;
   }
 }
 
-/* Subtle Staggered Reveal Motion */
+/* ==========================================================================
+   Staggered Editorial Reveal Choreography (Opt-in under no-preference)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  html.card-opened body:not(.motion-paused) .reveal {
+    animation: card-reveal var(--duration-reveal) var(--ease-editorial) both;
+    animation-delay: calc(var(--step, 1) * 75ms);
+  }
+}
+
 @keyframes card-reveal {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -631,34 +1620,51 @@ body {
   }
 }
 
-.reveal {
-  animation: card-reveal var(--duration-reveal) var(--ease-editorial) both;
-  animation-delay: var(--delay, 0ms);
-}
-
+/* Reduced Motion Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    animation: none;
-    opacity: 1;
-    transform: none;
+  .envelope-stage {
+    display: none !important;
   }
 
-  .btn {
+  html.js-enhanced .page {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  .foil-text {
+    background-image: none;
+    color: var(--ink-primary);
+  }
+
+  .btn,
+  .util-btn,
+  .invitation {
     transition: none;
   }
 }
 
 /* Forced Colors Mode (Windows High Contrast) */
 @media (forced-colors: active) {
-  body {
+  .bg-stage,
+  .card-foil-sheen {
+    display: none;
+  }
+
+  .foil-text {
     background-image: none;
+    color: CanvasText;
   }
 
   .invitation,
   .invitation-inner,
   .location-panel,
   .honoree-degree,
-  .btn {
+  .countdown-cell,
+  .medallion,
+  .btn,
+  .util-btn {
     border: 1px solid CanvasText;
     box-shadow: none;
   }
@@ -669,40 +1675,51 @@ body {
     border: 2px solid #000000;
   }
 
-  .btn:focus-visible {
+  .btn:focus-visible,
+  .util-btn:focus-visible {
     outline: 2px solid Highlight;
   }
 }
 
-/* Print Stylesheet — Keepsake Print Output */
+/* Keepsake Print Stylesheet */
 @media print {
   @page {
     size: auto;
-    margin: 14mm;
+    margin: 12mm;
   }
 
-  body {
-    background: #ffffff;
-    color: #111111;
+  .bg-stage,
+  .utility-bar,
+  .envelope-stage,
+  .actions,
+  .action-status,
+  .countdown-block {
+    display: none !important;
   }
 
-  .page {
+  html.js-enhanced .page {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
     min-block-size: auto;
     padding: 0;
   }
 
+  body {
+    background: #ffffff;
+    color: #142742;
+  }
+
   .invitation {
     max-inline-size: none;
+    background: #ffffff;
     box-shadow: none;
-    border-color: #b5a484;
+    border-color: #b59e76;
+    transform: none;
   }
 
-  .reveal {
-    animation: none;
-  }
-
-  .actions,
-  .action-status {
-    display: none;
+  .foil-text {
+    background-image: none;
+    color: #142742;
   }
 }
