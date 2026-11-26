@@ -1630,9 +1630,10 @@ html.card-opened .envelope-stage {
 .location-title {
   margin: 0 0 var(--space-2);
   font-family: var(--font-display);
-  font-size: clamp(1.38rem, 1.18rem + 0.75vw, 1.62rem);
-  font-weight: 700;
-  line-height: 1.22;
+  font-size: clamp(1.125rem, 1.02rem + 0.45vw, 1.32rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.25;
   color: var(--ink-primary);
   text-wrap: balance;
 }
