@@ -1422,17 +1422,19 @@ html.card-opened .envelope-stage {
 
 /* Sincere Invitation Message */
 .message {
-  max-inline-size: 46ch;
+  max-inline-size: 48ch;
   margin-inline: auto;
   margin-block-end: var(--space-6);
   color: var(--ink-body);
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
 }
 
 .message p {
   margin: 0;
   font-size: 0.96875rem;
-  line-height: 1.78;
-  text-wrap: pretty;
+  line-height: 1.8;
 }
 
 .message p + p {
